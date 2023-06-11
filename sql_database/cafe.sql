@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 11, 2023 at 08:28 AM
+-- Generation Time: Jun 11, 2023 at 04:25 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -47,13 +47,13 @@ CREATE TABLE `cafe` (
 --
 
 INSERT INTO `cafe` (`id_cafe`, `nama_cafe`, `keramahan_dari_pelayan`, `kelengkapan_menu`, `tempat_parkir_kendaraan`, `ketersediaan_wifi`, `harga`, `keramahan_angka`, `menu_angka`, `parkir_angka`, `wifi_angka`, `harga_angka`) VALUES
-(1, 'Moci Cafe', '2', '1', '2', '1', '4', 2, 1, 2, 1, 4),
-(2, 'Key Cafe', '1', '1', '3', '2', '3', 1, 1, 3, 2, 3),
-(3, 'Loly Cafe', '3', '2', '2', '1', '4', 3, 2, 2, 1, 4),
-(4, 'Cleo Cafe', '2', '3', '2', '2', '1', 2, 3, 2, 2, 1),
-(5, 'Aldi Cafe', '3', '2', '1', '2', '2', 3, 2, 1, 2, 2),
-(6, 'Akul Cafe', '2', '3', '2', '1', '4', 2, 3, 2, 1, 4),
-(7, 'Luci Cafe', '2', '2', '1', '2', '4', 2, 2, 1, 2, 4);
+(1, 'Moci Cafe', 'Ramah', 'Kurang Lengkap', 'Luas', 'Tidak Tersedia', 'Mahal', 2, 1, 2, 1, 4),
+(2, 'Key Cafe', 'Kurang Ramah', 'Kurang Lengkap', 'Sangat Luas', 'Tersedia', 'Cukup Mahal', 1, 1, 3, 2, 3),
+(3, 'Loly Cafe', 'Sangat Ramah', 'Lengkap', 'Luas', 'Tidak Tersedia', 'Mahal', 3, 2, 2, 1, 4),
+(4, 'Cleo Cafe', 'Ramah', 'Sangat Lengkap', 'Luas', 'Tersedia', 'Sangat Murah', 2, 3, 2, 2, 1),
+(5, 'Aldi Cafe', 'Sangat Ramah', 'Lengkap', 'Kurang Luas', 'Tersedia', 'Murah', 3, 2, 1, 2, 2),
+(6, 'Akul Cafe', 'Ramah', 'Sangat Lengkap', 'Luas', 'Tidak Tersedia', 'Mahal', 2, 3, 2, 1, 4),
+(7, 'Luci Cafe', 'Ramah', 'Lengkap', 'Kurang Luas', 'Tersedia', 'Mahal', 2, 2, 1, 2, 4);
 
 --
 -- Indexes for dumped tables
