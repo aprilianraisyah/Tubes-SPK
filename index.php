@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sistem Pendukung Keputusan Pemilihan Coffee Shop Terbaik</title>
-	<meta property="og:image" content="assets/image/laptop.jpg" />
-	<meta name="description" content="Leppi adalah aplikasi Sistem Pendukung Keputusan Laptop berbasis Metode Weight Product">
+	<title>Sistem Pendukung Keputusan Penentuan Coffee Shop Terbaik</title>
+	<meta property="og:image" content="assets/image/cafe.jpg" />
+	
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
@@ -38,7 +38,7 @@
 								<ul class="left" style="margin-left: -52px;">
 									<li><a class="active" href="index.php">HOME</a></li>
 									<li><a href="rekomendasi.php">REKOMENDASI</a></li>
-									<li><a href="daftar_hp.php">DAFTAR SMARTPHONE</a></li>
+									<li><a href="daftar_hp.php">DAFTAR COFFEE SHOP</a></li>
 									<li><a href="#about">TENTANG</a></li>
 								</ul>
 						</div>
@@ -52,27 +52,27 @@
 		<div id="index-banner" class="parallax-container">
 			<div class="section no-pad-bot">
 				<div class="container">
-					<h1 class="header jarak center white-text" style="font-size: 40px">SISTEM PENDUKUNG KEPUTUSAN MENGGUNAKAN METODE TOPSIS</h1>
+					<h1 class="header jarak center white-text" style="font-size: 25px">SISTEM PENDUKUNG KEPUTUSAN MENGGUNAKAN METODE ROC DAN TOPSIS</h1>
 					<div class="row center">
-						<h5 class="header jarak-button col s12 light" style="margin-bottom: 0px; font-size: 26px">PEMILIHAN SMARTPHONE</h5>
+						<h5 class="header jarak-button col s12" style="margin-bottom: 0px; font-size: 20px">PADA PENENTUAN COFFEE SHOP</h5>
 					</div>
 					<div class="row center" \>
 								<a href="rekomendasi.php" id="download-button" class="waves-effect waves-light btn-large" style="margin-top: 40px">Pilih Rekomendasi</a>
 							</div>
 				</div>
 			</div>
-			<div class="parallax"><img src="assets/image/pixel.jpg" alt="Laptop"></div>
+			<div class="parallax"><img src="assets/image/cafe.jpg"></div>
 		</div>
 		<!-- Jumbotron End -->
 
 	<!-- Info Start -->
-	<div style="background-color: white">
+	<!-- <div style="background-color: white">
 		<div class="container">
 		    <div class="section-card" style="padding: 36px 0px">
 		    	<div class="row">
 		    		<div class="col s6">
-			    		<center><h5 class="header" style="margin-left: 0px; margin-bottom: 0px; margin-top: 25px; color: #635c73">INFO SISTEM</h5></center><br>
-			    		<p style="text-align: justify; padding-right: 16px;">Sistem Pendukung Keputusan Pemilihan Smartphone ini menggunakan metode TOPSIS yang dibangun menggunakan bahasa PHP. Sistem ini dibuat sebagai Tugas Akhir Mata Kuliah Sistem Pendukung Keputusan Prodi Teknik Informatika Universitas Trunojoyo. </p>
+			    		<center><h5 class="header" style="margin-left: 0px; margin-bottom: 0px; margin-top: 25px; color: #635c73">Deskripsi</h5></center><br>
+			    		<p style="text-align: justify; padding-right: 16px;">Sistem Pendukung Keputusan Penentuan Coffee Shop ini menggunakan kombinasi metode ROC dan TOPSIS. Sistem ini dibuat sebagai Tugas Akhir Mata Kuliah Sistem Pendukung Keputusan Prodi D-IV Sistem Informasi Bisnis Politeknik Negeri Malang. </p>
 						</div>
 			    	<div class="col s6">
 			    		<center><h5 class="header" style="margin-left: 0px; margin-bottom: 0px; margin-top: 25px; color: #635c73">INFO METODE</h5></center><br>
@@ -82,17 +82,18 @@
 		    	</div>
 	    	</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- Info End -->
 
 	<div id="about" class="modal">
     <div class="modal-content">
       <h4>Tentang</h4>
-      <p>Sistem Pendukung Keputusan Pemilihan Smartphone ini menggunakan metode TOPSIS yang dibangun menggunakan bahasa PHP.
-				Sistem ini dibuat sebagai Tugas Akhir Mata Kuliah Sistem Pendukung Keputusan Prodi Teknik Informatika Universitas Trunojoyo Madura. <br>
+      <p>Sistem Pendukung Keputusan Penentuan Coffee Shop ini menggunakan kombinasi metode ROC dan TOPSIS yang dibangun menggunakan bahasa PHP.
+	  Sistem ini dibuat sebagai Tugas Akhir Mata Kuliah Sistem Pendukung Keputusan Prodi D-IV Sistem Informasi Bisnis Politeknik Negeri Malang. <br>
 				<br>
-				1. Zulfi Osman<br>
-				2. Wahid Arinanto Nugroho <a href="https://wahidari.gitlab.io/"> (Gitlab)</a><br>
+				1. Alifah Okta Nur Wardani<br>
+				2. Aprilia Noor A'isyah <br>
+				3. Mertha Indri Setya Putri 
 			</p>
     </div>
     <div class="modal-footer">
@@ -105,7 +106,7 @@
     <!-- Footer Start -->
 	<div class="footer-copyright" style="padding: 0px 0px">
       <div class="container">
-        <p align="center" style="color: #999">&copy; Sistem Pendukung Keputusan Pemilihan Smartphone 2018.</p>
+        <p align="center" style="color: #999">&copy; Sistem Pendukung Keputusan Penentuan CoffeeShop</p>
       </div>
     </div>
     <!-- Footer End -->

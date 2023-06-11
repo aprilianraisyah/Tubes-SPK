@@ -507,11 +507,13 @@ function JarakIplus($aplus,$bob){
 		<div id="about" class="modal">
 			<div class="modal-content">
 				<h4>Tentang</h4>
-				<p>Sistem Pendukung Keputusan Pemilihan Smartphone ini menggunakan metode TOPSIS yang dibangun menggunakan bahasa PHP.
-					Sistem ini dibuat sebagai Tugas Akhir Mata Kuliah Sistem Pendukung Keputusan Prodi Teknik Informatika Universitas Trunojoyo Madura. <br>
-					<br>
-					1. Zulfi Osman<br>
-					2. Wahid Arinanto Nugroho <a href="https://wahidari.gitlab.io/"> (Gitlab)</a><br>
+				<p>Sistem Pendukung Keputusan Penentuan Coffee Shop ini menggunakan kombinasi metode ROC dan TOPSIS yang dibangun menggunakan bahasa PHP.
+	  			Sistem ini dibuat sebagai Tugas Akhir Mata Kuliah Sistem Pendukung Keputusan Prodi D-IV Sistem Informasi Bisnis Politeknik Negeri Malang. <br>
+				<br>
+				1. Alifah Okta Nur Wardani<br>
+				2. Aprilia Noor A'isyah <br>
+				3. Mertha Indri Setya Putri 
+			
 				</p>
 			</div>
 			<div class="modal-footer">
@@ -525,7 +527,7 @@ function JarakIplus($aplus,$bob){
 		<!-- Footer Start -->
 		<div class="footer-copyright" style="padding: 0px 0px; background-color: white">
 			<div class="container">
-				<p align="center" style="color: #999">&copy; Sistem Pendukung Keputusan Pemilihan Smartphone 2018.</p>
+				<p align="center" style="color: #999">&copy; Sistem Pendukung Keputusan Penentuan CoffeeShop</p>
 			</div>
 		</div>
 		<!-- Footer End -->
