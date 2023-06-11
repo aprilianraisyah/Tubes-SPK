@@ -1,120 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Sistem Pendukung Keputusan Penentuan Coffee Shop Terbaik</title>
-	<meta property="og:image" content="assets/image/cafe.jpg" />
-	
-	<!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<!--Import materialize.css-->
-	<link type="text/css" rel="stylesheet" href="assets/css/materialize.css"  media="screen,projection"/>
-	<link rel="stylesheet" href="assets/css/table.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-	<link rel="apple-touch-icon" sizes="76x76" href="assets/image/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="assets/image/favicon.png">
+  <title>Sistem Pendukung Keputusan Penentuan Coffee Shop</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-	<!--Let browser know website is optimized for mobile-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<!--Import jQuery before materialize.js-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/materialize.js"></script>
-	
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-	<script>
-	$(document).ready(function(){
-	  $(".button-collapse").sideNav();
-	  $(".dropdown-button").dropdown();
-	});
-	</script>
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/stylehome.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
+
 <body>
-	<div class="navbar-fixed">
-	<nav>
-    	<div class="container">
-						<div class="nav-wrapper">
-								<ul class="left" style="margin-left: -52px;">
-									<li><a class="active" href="index.php">HOME</a></li>
-									<li><a href="rekomendasi.php">REKOMENDASI</a></li>
-									<li><a href="daftar_hp.php">DAFTAR COFFEE SHOP</a></li>
-									<li><a href="#about">TENTANG</a></li>
-								</ul>
-						</div>
-					
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index.html">AMA</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="daftar_hp.php">Daftar Coffee Shop</a></li>
+          <li><a class="nav-link scrollto" href="rekomendasi.php">Rekomendasi</a></li>
+          <li><a class="nav-link scrollto" href="anggota.php">Tentang</a></li>
+          <li><a class="getstarted scrollto" href="tentang.php">Pilih Rekomendasi</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>Sistem Pendukung Keputusan Penentuan Coffee Shop</h1>
+          <h2>Dengan Menggunakan Kombinasi Metode ROC dan TOPSIS</h2>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="#about" class="btn-get-started scrollto">Pilih Rekomendasi</a>
+          </div>
         </div>
-		</nav>
-		</div>
-    <!-- Body Start -->
-
-		<!-- Jumbotron Start -->
-		<div id="index-banner" class="parallax-container">
-			<div class="section no-pad-bot">
-				<div class="container">
-					<h1 class="header jarak center white-text" style="font-size: 25px">SISTEM PENDUKUNG KEPUTUSAN MENGGUNAKAN METODE ROC DAN TOPSIS</h1>
-					<div class="row center">
-						<h5 class="header jarak-button col s12" style="margin-bottom: 0px; font-size: 20px">PADA PENENTUAN COFFEE SHOP</h5>
-					</div>
-					<div class="row center" \>
-								<a href="rekomendasi.php" id="download-button" class="waves-effect waves-light btn-large" style="margin-top: 40px">Pilih Rekomendasi</a>
-							</div>
-				</div>
-			</div>
-			<div class="parallax"><img src="assets/image/cafe.jpg"></div>
-		</div>
-		<!-- Jumbotron End -->
-
-	<!-- Info Start -->
-	<!-- <div style="background-color: white">
-		<div class="container">
-		    <div class="section-card" style="padding: 36px 0px">
-		    	<div class="row">
-		    		<div class="col s6">
-			    		<center><h5 class="header" style="margin-left: 0px; margin-bottom: 0px; margin-top: 25px; color: #635c73">Deskripsi</h5></center><br>
-			    		<p style="text-align: justify; padding-right: 16px;">Sistem Pendukung Keputusan Penentuan Coffee Shop ini menggunakan kombinasi metode ROC dan TOPSIS. Sistem ini dibuat sebagai Tugas Akhir Mata Kuliah Sistem Pendukung Keputusan Prodi D-IV Sistem Informasi Bisnis Politeknik Negeri Malang. </p>
-						</div>
-			    	<div class="col s6">
-			    		<center><h5 class="header" style="margin-left: 0px; margin-bottom: 0px; margin-top: 25px; color: #635c73">INFO METODE</h5></center><br>
-							<p style="text-align: justify; padding-left: 16px;">Metode yang digunakan adalah metode TOPSIS. Metode TOPSIS adalah salah satu metode penyelesaian pada sistem pendukung keputusan. Metode ini mengevaluasi beberapa alternatif terhadap sekumpulan atribuat atau kriteria, dimana setiap atribut saling tidak bergantung satu dengan yang lainnya.
-							</p>
-							</div>
-		    	</div>
-	    	</div>
-		</div>
-	</div> -->
-	<!-- Info End -->
-
-	<div id="about" class="modal">
-    <div class="modal-content">
-      <h4>Tentang</h4>
-      <p>Sistem Pendukung Keputusan Penentuan Coffee Shop ini menggunakan kombinasi metode ROC dan TOPSIS yang dibangun menggunakan bahasa PHP.
-	  Sistem ini dibuat sebagai Tugas Akhir Mata Kuliah Sistem Pendukung Keputusan Prodi D-IV Sistem Informasi Bisnis Politeknik Negeri Malang. <br>
-				<br>
-				1. Alifah Okta Nur Wardani<br>
-				2. Aprilia Noor A'isyah <br>
-				3. Mertha Indri Setya Putri 
-			</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
-    </div>
-	</div>
-	
-    <!-- Body End -->
-
-    <!-- Footer Start -->
-	<div class="footer-copyright" style="padding: 0px 0px">
-      <div class="container">
-        <p align="center" style="color: #999">&copy; Sistem Pendukung Keputusan Penentuan CoffeeShop</p>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img">
+          <img src="assets/image/ca2.jpg" class="img-fluid animated" alt="">
+        </div>
       </div>
     </div>
-    <!-- Footer End -->
-    <script type="text/javascript">
-	 			$(document).ready(function(){
-	      $('.parallax').parallax();
-				$('.modal').modal();
-	    });
-	</script>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="container footer-bottom clearfix">
+      </div>
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        &copy; Copyright <strong><span>AMA</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/ -->
+      </div>
+    </div>
+    
+  </footer><!-- End Footer -->
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>

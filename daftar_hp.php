@@ -150,9 +150,10 @@ include('koneksi.php');
 	<link rel="stylesheet" type="text/css" href="assets/dataTable/jquery.dataTables.min.css">
 	<script type="text/javascript" charset="utf8" src="assets/dataTable/jquery.dataTables.min.js"></script>
 
+	
 </head>
 <body>
-	<div class="navbar-fixed">
+	<!-- <div class="navbar-fixed">
 	<nav>
     	<div class="container">
 					
@@ -167,7 +168,8 @@ include('koneksi.php');
 					
         </div>
 		</nav>
-		</div>
+		</div> -->
+
 		<!-- Body Start -->
 
 		<!-- Daftar hp Start -->
