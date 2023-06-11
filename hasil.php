@@ -52,7 +52,18 @@ function JarakIplus($aplus,$bob){
 		for($j=0;$j<sizeof($aplus);$j++){
 			$dplus[$i] = $dplus[$i] + pow(($aplus[$j] - $bob[$i][$j]),2);
 		}
-		$dplus[$i] = round(sqrt($dplus[$i]),4);
+		$dplus[$i] = sqrt($dplus[$i]);
+	}
+	return $dplus;
+}
+
+function JarakImin($aplus,$bob){
+	for ($i=0;$i<sizeof($bob);$i++) {
+		$dplus[$i] = 0;
+		for($j=0;$j<sizeof($aplus);$j++){
+			$dplus[$i] = $dplus[$i] + pow(($aplus[$j] - $bob[$i][$j]),2);
+		}
+		$dplus[$i] = sqrt($dplus[$i]);
 	}
 	return $dplus;
 }
@@ -62,7 +73,7 @@ function JarakIplus($aplus,$bob){
 <html>
 <head>
 	
-	<title>Sistem Pendukung Keputusan Pemilihan Smartphone</title>
+	<title>Sistem Pendukung Keputusan Penentuan Coffee Shop Terbaik</title>
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
@@ -90,11 +101,10 @@ function JarakIplus($aplus,$bob){
 
 				<div class="nav-wrapper">
 					<ul class="left" style="margin-left: -52px;">
-						<li><a href="index.php">HOME</a></li>
-						<li><a href="rekomendasi.php">REKOMENDASI</a></li>
-						<li><a href="daftar_hp.php">DAFTAR CAFE</a></li>
-						<li><a class="active" href="hasil.php">PERHITUNGAN</a></li>
-						<li><a href="#about">TENTANG</a></li>
+						<li><a href="index.php">Home</a></li>
+						<li><a href="daftar_cafe.php">Daftar Coffe Shop</a></li>
+						<li><a class="active" href="hasil.php">Perhitungan</a></li>
+						<li><a href="tentang.php">Tentang</a></li>						
 					</ul>
 				</div>
 
@@ -103,7 +113,7 @@ function JarakIplus($aplus,$bob){
 	</div>
 	<!-- Body Start -->
 
-	<!-- Daftar Laptop Start -->
+	<!-- Daftar Coffe Shop Start -->
 	<div style="background-color: #efefef">
 		<div class="container">
 			<div class="section-card" style="padding: 20px 0px">
@@ -111,14 +121,15 @@ function JarakIplus($aplus,$bob){
 
 
 				<center>
-					<h4 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">HASIL REKOMENDASI SMARTPHONE</h4>
+					<h5 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">HASIL REKOMENDASI COFFE SHOP</h5>
+					<h6 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">Dengan Metode ROC dan Topsis</h6>
 				</center>
 				<ul>
 					<li>
 						<div class="row">
 							<div class="card">
 								<div class="card-content">
-									<h5 style="margin-bottom: 16px; margin-top: -6px;">Matrik Smartphone</h5>
+									<h5 style="margin-bottom: 16px; margin-top: -6px;">Matriks Keputusan</h5>
 									<table class="responsive-table">
 
 										<thead style="border-top: 1px solid #d0d0d0;">
@@ -158,10 +169,6 @@ function JarakIplus($aplus,$bob){
 					</li>
 				</ul>
 
-
-				<center>
-					<h4 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">Matriks ternormalisasi, R:</h4>
-				</center>
 				<ul>
 					<li>
 						<div class="row">
@@ -214,10 +221,6 @@ function JarakIplus($aplus,$bob){
 						</li>
 					</ul>
 
-
-					<center>
-						<h4 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">BOBOT (W)</h4>
-					</center>
 					<ul> 
 						<li>
 							<div class="row">
@@ -252,9 +255,6 @@ function JarakIplus($aplus,$bob){
 					</ul>
 
 
-					<center>
-						<h4 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">Matriks ternormalisasi terbobot, Y:</h4>
-					</center>
 					<ul>
 						<li>
 							<div class="row">
@@ -308,11 +308,6 @@ function JarakIplus($aplus,$bob){
 							</li>
 						</ul>
 
-
-						<center>
-							<h4 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">Matrik Solusi ideal positif dan negatif
-							</h4>
-						</center>
 						<ul>
 							<li>
 								<div class="row">
@@ -338,7 +333,7 @@ function JarakIplus($aplus,$bob){
 													?>
 													<tr>
 														<?php  
-														$idealpositif=array(min($NormalisasiBobotTrans[0]),max($NormalisasiBobotTrans[1]),max($NormalisasiBobotTrans[2]),max($NormalisasiBobotTrans[3]),max($NormalisasiBobotTrans[4]));
+														$idealpositif=array(max($NormalisasiBobotTrans[0]),max($NormalisasiBobotTrans[1]),max($NormalisasiBobotTrans[2]),max($NormalisasiBobotTrans[3]),min($NormalisasiBobotTrans[4]));
 														?>
 														<td><center><?php echo "Y+" ?> </center></td>
 														<td><center><?php echo(round(max($NormalisasiBobotTrans[0]),6));?>&nbsp(max)</center></td>
@@ -349,7 +344,7 @@ function JarakIplus($aplus,$bob){
 													</tr>
 													<tr>
 														<?php  
-														$idealnegatif=array(max($NormalisasiBobotTrans[0]),min($NormalisasiBobotTrans[1]),min($NormalisasiBobotTrans[2]),min($NormalisasiBobotTrans[3]),min($NormalisasiBobotTrans[4]));
+														$idealnegatif=array(min($NormalisasiBobotTrans[0]),min($NormalisasiBobotTrans[1]),min($NormalisasiBobotTrans[2]),min($NormalisasiBobotTrans[3]),max($NormalisasiBobotTrans[4]));
 														?>
 														<td><center><?php echo "Y-" ?> </center></td>
 														<td><center><?php echo(round(min($NormalisasiBobotTrans[0]),6));?>&nbsp(min)</center></td>
@@ -366,16 +361,12 @@ function JarakIplus($aplus,$bob){
 							</li>
 						</ul>
 
-
-						<center>
-							<h4 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">Jarak antara nilai terbobot setiap alternatif terhadap solusi ideal positif												
-							</h4>
-						</center>
 						<ul>
 							<li>
 								<div class="row">
 									<div class="card" style="margin-left: 320px;margin-right: 320px;">
 										<div class="card-content">
+										<h5 style="margin-bottom: 16px; margin-top: -6px;">Jarak antara nilai terbobot terhadap Solusi ideal positif "D+" dan negatif "D-" </h5>
 											<table class="responsive-table" >
 
 												<thead style="border-top: 1px solid #d0d0d0;">
@@ -391,7 +382,7 @@ function JarakIplus($aplus,$bob){
 													$query=mysqli_query($selectdb,"SELECT * FROM cafe");
 													$no=1;
 													$Dplus=JarakIplus($idealpositif,$NormalisasiBobot);
-													$Dmin=JarakIplus($idealnegatif,$NormalisasiBobot);
+													$Dmin=JarakImin($idealnegatif,$NormalisasiBobot);
 													while ($cafe=mysqli_fetch_array($query)) {
 
 														?>
@@ -415,15 +406,12 @@ function JarakIplus($aplus,$bob){
 						</ul>
 
 
-						<center>
-							<h4 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">Nilai Preferensi untuk Setiap alternatif (V)												
-							</h4>
-						</center>
 						<ul>
 							<li>
 								<div class="row">
 									<div class="card" style="margin-left: 320px;margin-right: 320px;">
 										<div class="card-content">
+										<h5 style="margin-bottom: 16px; margin-top: -6px;">Nilai Preferensi untuk Setiap alternatif (V) </h5>
 											<table class="responsive-table" >
 
 												<thead style="border-top: 1px solid #d0d0d0;">
@@ -459,15 +447,12 @@ function JarakIplus($aplus,$bob){
 						</ul>
 
 
-						<center>
-							<h4 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">Nilai Preferensi tertinggi
-							</h4>
-						</center>
 						<ul>
 							<li>
 								<div class="row">
 									<div class="card" style="margin-left: 300px;margin-right: 300px;">
 										<div class="card-content">
+										<h5 style="margin-bottom: 16px; margin-top: -6px;">Nilai Preferensi Tertinggi</h5>
 											<table class="responsive-table" >
 
 												<thead style="border-top: 1px solid #d0d0d0;">
@@ -501,38 +486,22 @@ function JarakIplus($aplus,$bob){
 							</div>
 						</li>
 					</ul>
+
+
 					<div class="row center" \>
 						<a href="rekomendasi.php" id="download-button" class="waves-effect waves-light btn" style="margin-top: 0px">Hitung Rekomendasi Ulang</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Daftar Laptop End -->
-		<!-- Modal Start -->
-		<div id="about" class="modal">
-			<div class="modal-content">
-				<h4>Tentang</h4>
-				<p>Sistem Pendukung Keputusan Penentuan Coffee Shop ini menggunakan kombinasi metode ROC dan TOPSIS yang dibangun menggunakan bahasa PHP.
-	  			Sistem ini dibuat sebagai Tugas Akhir Mata Kuliah Sistem Pendukung Keputusan Prodi D-IV Sistem Informasi Bisnis Politeknik Negeri Malang. <br>
-				<br>
-				1. Alifah Okta Nur Wardani<br>
-				2. Aprilia Noor A'isyah <br>
-				3. Mertha Indri Setya Putri 
-			
-				</p>
-			</div>
-			<div class="modal-footer">
-				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
-			</div>
-		</div>
-		<!-- Modal End -->
+		<!-- Daftar Coffe Shop End -->
 
 		<!-- Body End -->
 
 		<!-- Footer Start -->
 		<div class="footer-copyright" style="padding: 0px 0px; background-color: white">
 			<div class="container">
-				<p align="center" style="color: #999">&copy; Sistem Pendukung Keputusan Penentuan CoffeeShop</p>
+				<p align="center" style="color: #999">&copy; Copyright <strong><span>AMA</span></strong>. SPK Coffe Shop</p>
 			</div>
 		</div>
 		<!-- Footer End -->

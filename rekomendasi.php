@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sistem Pendukung Keputusan Pemilihan Cafe</title>
+    <title>Sistem Pendukung Keputusan Penentuan Coffee Shop Terbaik</title>
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
@@ -32,10 +32,10 @@
 						<div class="nav-wrapper">
 
 								<ul class="left" style="margin-left: -52px;">
-									<li><a href="index.php">HOME</a></li>
-									<li><a class="active" href="rekomendasi.php">REKOMENDASI</a></li>
-                                    <li><a href="daftar_hp.php">DAFTAR CAFE</a></li>
-                                    <li><a href="#about">TENTANG</a></li>
+                                    <li><a href="index.php">Home</a></li>
+									<li><a href="daftar_cafe.php">Daftar Coffe Shop</a></li>
+									<li><a class="active" href="rekomendasi.php">Rekomendasi</a></li>
+									<li><a href="tentang.php">Tentang</a></li>
 								</ul>
 						</div>
 					
@@ -57,18 +57,26 @@
                                     <div class="card">
                                         <div class="card-content">
                                             <div class="row">
-                                                <center><h4>Bobot</h4></center>
+                                                <center><h4>Perhitungan Bobot dengan Metode ROC</h4></center>
                                                 <br>
                                                 <form class = "col s12" method="POST" action="hasil.php">
                                                     <div class = "row">
                                                         <div class="col s12">
-
+                                                            <div class="col s6" style="margin-top: 10px;">
+                                                                <b>Jumlah Kriteria</b>
+                                                            </div>
+                                                            <div class="col s6">
+                                                                <select required name="kmlkri">
+                                                                    <!-- <option value = "" disabled selected style="color: #eceff1;"><i>Jumlah Kriteria</i></option> -->
+                                                                    <option value = "5">5</option>
+                                                                </select>
+                                                            </div>
                                                             <div class="col s6" style="margin-top: 10px;">
                                                                 <b>Keramahan Dari Pelayan</b>
                                                             </div>
                                                             <div class="col s6">
                                                                 <select required name="keramahan">
-                                                                    <option value = "" disabled selected style="color: #eceff1;"><i>Kriteria Keramahan</i></option>
+                                                                    <!-- <option value = "" disabled selected style="color: #eceff1;"><i>Kriteria Keramahan</i></option> -->
                                                                     <option value = "0.456">0.456</option>
                                                                 </select>
                                                             </div>
@@ -78,7 +86,7 @@
                                                             </div>
                                                             <div class="col s6">
                                                                 <select required name="menu">
-                                                                    <option value = "" disabled selected>Kriteria Menu</option> 
+                                                                    <!-- <option value = "" disabled selected>Kriteria Menu</option> -->
                                                                     <option value = "0.256">0.256</option>
                                                                 </select>
                                                             </div>
@@ -88,7 +96,7 @@
                                                             </div>
                                                             <div class="col s6">
                                                                 <select required name="parkir">
-                                                                    <option value = "" disabled selected>Kriteria Parkir</option>
+                                                                    <!-- <option value = "" disabled selected>Kriteria Parkir</option> -->
                                                                     <option value = "0.156">0.156</option>
                                                                 </select>
                                                             </div>
@@ -98,7 +106,7 @@
                                                             </div>
                                                             <div class="col s6">
                                                                 <select required name="wifi">
-                                                                <option value = "" disabled selected>Kriteria Wifi</option>
+                                                                <!-- <option value = "" disabled selected>Kriteria Wifi</option> -->
                                                                     <option value = "0.090">0.090</option>
                                                                 </select>
                                                             </div>
@@ -108,7 +116,7 @@
                                                             </div>
                                                             <div class="col s6">
                                                                 <select required name="harga">
-                                                                    <option value = "" disabled selected>Kriteria Harga</option>
+                                                                    <!-- <option value = "" disabled selected>Kriteria Harga</option> -->
                                                                     <option value = "0.040">0.040</option>
                                                                 </select>
                                                             </div>
@@ -128,32 +136,15 @@
                 </div>
             </div>
         </div>
-        <!-- Rekomendasi Laptop End -->
+        <!-- Rekomendasi Coffe Shop End -->
 
-    <!-- Modal Start -->
-	<div id="about" class="modal">
-        <div class="modal-content">
-          <h4>Tentang</h4>
-          <p>Sistem Pendukung Keputusan Pemilihan Smartphone ini menggunakan metode TOPSIS yang dibangun menggunakan bahasa PHP.
-				Sistem ini dibuat sebagai Tugas Akhir Mata Kuliah Sistem Pendukung Keputusan Prodi Teknik Informatika Universitas Trunojoyo Madura. <br>
-				<br>
-				1. Alifah Okta<br>
-				2. April<br>
-                3. Mertha<br>
-			</p>
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
-        </div>
-    </div>
-    <!-- Modal End -->
 
     <!-- Body End -->
 
     <!-- Footer Start -->
 	<div class="footer-copyright" style="padding: 0px 0px; background-color: white">
       <div class="container">
-        <p align="center" style="color: #999">&copy; Sistem Pendukung Keputusan Pemilihan Smartphone 2018.</p>
+        <p align="center" style="color: #999">&copy; Copyright <strong><span>AMA</span></strong>. SPK Coffe Shop</p>
       </div>
     </div>
     <!-- Footer End -->

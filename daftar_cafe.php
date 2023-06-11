@@ -14,88 +14,58 @@ include('koneksi.php');
 		
 		$keramahan_angka = $menu_angka = $parkir_angka = $wifi_angka = $harga_angka = 0;
 
-		if($keramahan = 1){
+		if($keramahan = "Kurang Ramah"){
 			$keramahan_angka = 1;
 		} 
-		elseif($keramahan = 2){
+		elseif($keramahan = "Ramah"){
 			$keramahan_angka = 2;
 		}
-		elseif($keramahan = 3){
+		elseif($keramahan = "Sangat Ramah"){
 			$keramahan_angka = 3;
 		}
-		elseif($keramahan = 4){
-			$keramahan_angka = 4;
-		}
-		elseif($keramahan =5 ){
-			$keramahan_angka = 5;
-		}
 
 
-		if($menu = 1){
+		if($menu = "Kurang Lengkap"){
 			$menu_angka = 1;
 		} 
-		elseif($menu = 2){
+		elseif($menu = "Lengkap"){
 			$menu_angka = 2;
 		}
-		elseif($menu = 3){
+		elseif($menu = "Sangat Lengkap"){
 			$menu_angka = 3;
 		}
-		elseif($menu = 4){
-			$menu_angka = 4;
-		}
-		elseif($menu =5 ){
-			$menu_angka = 5;
-		}
 
 
-		if($parkir = 1){
+		if($parkir = "Kurang Luas"){
 			$parkir_angka = 1;
 		} 
-		elseif($parkir = 2){
+		elseif($parkir = "Luas"){
 			$parkir_angka = 2;
 		}
-		elseif($parkir = 3){
+		elseif($parkir = "Sangat Luas"){
 			$parkir_angka = 3;
 		}
-		elseif($parkir = 4){
-			$parkir_angka = 4;
-		}
-		elseif($parkir =5 ){
-			$parkir_angka = 5;
-		}
 
 
-		if($wifi = 1){
+		if($wifi = "Tidak Tersedia"){
 			$wifi_angka = 1;
 		} 
-		elseif($wifi = 2){
+		elseif($wifi = "Tersedia"){
 			$wifi_angka = 2;
 		}
-		elseif($wifi = 3){
-			$wifi_angka = 3;
-		}
-		elseif($wifi = 4){
-			$wifi_angka = 4;
-		}
-		elseif($wifi =5 ){
-			$wifi_angka = 5;
-		}
 
 
-		if($harga = 1){
+		if($harga = "sangat Murah"){
 			$harga_angka = 1;
 		} 
-		elseif($harga = 2){
+		elseif($harga = "Murah"){
 			$harga_angka = 2;
 		}
-		elseif($harga = 3){
+		elseif($harga = "Cukup Mahal"){
 			$harga_angka = 3;
 		}
-		elseif($harga = 4){
+		elseif($harga = "Mahal"){
 			$harga_angka = 4;
-		}
-		elseif($harga =5 ){
-			$harga_angka = 5;
 		}
 
 		$sql = "INSERT INTO `cafe` (`id_cafe`, `nama_cafe`, `keramahan_dari_pelayan`, `kelengkapan_menu`, `tempat_parkir_kendaraan`, `ketersediaan_wifi`, `harga`, `keramahan_angka`, `menu_angka`, `parkir_angka`, `wifi_angka`, `harga_angka`) 
@@ -128,7 +98,7 @@ include('koneksi.php');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sistem Pendukung Keputusan Pemilihan Cafe</title>
+	<title>Sistem Pendukung Keputusan Penentuan Coffee Shop Terbaik</title>
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
@@ -153,22 +123,22 @@ include('koneksi.php');
 	
 </head>
 <body>
-	<!-- <div class="navbar-fixed">
+	<div class="navbar-fixed">
 	<nav>
     	<div class="container">
 					
 						<div class="nav-wrapper">
 								<ul class="left" style="margin-left: -52px;">
-									<li><a href="index.php">HOME</a></li>
-									<li><a href="rekomendasi.php">REKOMENDASI</a></li>
-									<li><a class="active" href="daftar_cafe.php">DAFTAR CAFE</a></li>
-									<li><a href="#about">TENTANG</a></li>
+									<li><a href="index.php">Home</a></li>
+									<li><a class="active" href="daftar_cafe.php">Daftar Coffe Shop</a></li>
+									<li><a href="rekomendasi.php">Rekomendasi</a></li>
+									<li><a href="tentang.php">Tentang</a></li>
 								</ul>
 						</div>
 					
         </div>
 		</nav>
-		</div> -->
+		</div>
 
 		<!-- Body Start -->
 
@@ -181,7 +151,7 @@ include('koneksi.php');
 						<div class="row">
 						<div class="card">
 								<div class="card-content">
-									<center><h4 style="margin-bottom: 0px; margin-top: -8px;">Daftar Cafe</h4></center>
+									<center><h4 style="margin-bottom: 0px; margin-top: -8px;">Daftar Coffe Shop</h4></center>
 									<table id="table_id" class="hover dataTablesCustom" style="width:100%">
 											<thead style="border-top: 1px solid #d0d0d0;">
 												<tr>
@@ -244,7 +214,7 @@ include('koneksi.php');
 						<div class="row">
 							<div class="card">
 								<div class="card-content" style="padding-top: 10px;">
-									<center><h5 style="margin-bottom: 10px;">Analisa Cafe</h5></center>
+									<center><h5 style="margin-bottom: 10px;">Analisis Jenis Kriteria dan Matriks Keputusan</h5></center>
 									<table class="responsive-table">
 									
 											<thead style="border-top: 1px solid #d0d0d0;">
@@ -305,17 +275,13 @@ include('koneksi.php');
 										</div>
 
 										<div class="col s6" style="margin-top: 10px;">
-											<b>Keramahan</b>
-										</div>
+										<b>Keramahan</b>
 										</div>
 										<div class="col s6">
-											<select style="display: block; margin-bottom: 4px;" required name="ram">
-												<!-- <option value = "" disabled selected>Kriteria RAM</option>  -->
-												<option value = "1">1 Nilai</option>
-												<option value = "2">2 Nilai</option>
-												<option value = "3">3 Nilai</option>
-												<option value = "4">4 Nilai</option>
-												<option value = "5">5 Nilai</option>
+											<select style="display: block; margin-bottom: 4px;" required name="keramahan">
+												<option value = "1">Kurang Ramah</option>
+												<option value = "2">Ramah</option>
+												<option value = "3">Sangat Ramah</option>
 											</select>
 										</div>
 										
@@ -323,13 +289,10 @@ include('koneksi.php');
 										<b>Menu</b>
 										</div>
 										<div class="col s6">
-											<select style="display: block; margin-bottom: 4px;" required name="ram">
-												<!-- <option value = "" disabled selected>Kriteria RAM</option>  -->
-												<option value = "1">1 Nilai</option>
-												<option value = "2">2 Nilai</option>
-												<option value = "3">3 Nilai</option>
-												<option value = "4">4 Nilai</option>
-												<option value = "5">5 Nilai</option>
+											<select style="display: block; margin-bottom: 4px;" required name="menu"> -->
+												<option value = "1">Kurang Lengkap</option>
+												<option value = "2">Lengkap</option>
+												<option value = "3">Sangat Lengkap</option>
 											</select>
 										</div>
 
@@ -337,13 +300,10 @@ include('koneksi.php');
 											<b>Parkir</b>
 										</div>
 										<div class="col s6">
-											<select style="display: block; margin-bottom: 4px;" required name="memori">
-												<!-- <option value = "" disabled selected>Kriteria Penyimpanan</option> -->
-												<option value = "1">1 Nilai</option>
-												<option value = "2">2 Nilai</option>
-												<option value = "3">3 Nilai</option>
-												<option value = "4">4 Nilai</option>
-												<option value = "5">5 Nilai</option>
+											<select style="display: block; margin-bottom: 4px;" required name="parkir">
+												<option value = "1">Kurang Luas</option>
+												<option value = "2">Luas</option>
+												<option value = "3">Sangat Luas</option>
 											</select>
 										</div>
 
@@ -351,12 +311,9 @@ include('koneksi.php');
 											<b>Wifi</b>
 										</div>
 										<div class="col s6">
-											<select style="display: block; margin-bottom: 4px;" required name="processor">
-												<option value = "1">1 Nilai</option>
-												<option value = "2">2 Nilai</option>
-												<option value = "3">3 Nilai</option>
-												<option value = "4">4 Nilai</option>
-												<option value = "5">5 Nilai</option>
+											<select style="display: block; margin-bottom: 4px;" required name="wifi">
+												<option value = "1">Tidak Tersedia</option>
+												<option value = "2">Tersedia</option>
 											</select>
 										</div>
 
@@ -364,13 +321,11 @@ include('koneksi.php');
 											<b>Harga</b>
 										</div>
 										<div class="col s6">
-											<select style="display: block; margin-bottom: 4px;" required name="kamera">
-												<!-- <option value = "" disabled selected>Kriteria Kamera</option> -->
-												<option value = "1">1 Nilai</option>
-												<option value = "2">2 Nilai</option>
-												<option value = "3">3 Nilai</option>
-												<option value = "4">4 Nilai</option>
-												<option value = "5">5 Nilai</option>
+											<select style="display: block; margin-bottom: 4px;" required name="harga">
+												<option value = "1">Sangat Murah</option>
+												<option value = "2">Murah</option>
+												<option value = "3">Cukup Mahal</option>
+												<option value = "4">Mahal</option>
 											</select>
 										</div>
 
@@ -382,37 +337,14 @@ include('koneksi.php');
 					</div>
 				</div>
 			</div>
-		<div style="height: 0px; "class="modal-footer">
-          <a style="margin-top: -30px;" class="modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
-        </div>
 	</div>
-	<!-- Modal End -->
-
-	<!-- Modal Start -->
-	<div id="about" class="modal">
-		<div class="modal-content">
-			<h4>Tentang</h4>
-			<p>Sistem Pendukung Keputusan Penentuan Coffee Shop ini menggunakan kombinasi metode ROC dan TOPSIS yang dibangun menggunakan bahasa PHP.
-	  		Sistem ini dibuat sebagai Tugas Akhir Mata Kuliah Sistem Pendukung Keputusan Prodi D-IV Sistem Informasi Bisnis Politeknik Negeri Malang. <br>
-			<br>
-				1. Alifah Okta Nur Wardani<br>
-				2. Aprilia Noor A'isyah <br>
-				3. Mertha Indri Setya Putri 
-			</p>
-		</p>
-		</div>
-		<div class="modal-footer">
-			<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
-		</div>
-	</div>
-	<!-- Modal End -->
 
     <!-- Body End -->
 
     <!-- Footer Start -->
 	<div class="footer-copyright" style="padding: 0px 0px; background-color: white">
       <div class="container">
-        <p align="center" style="color: #999">&copy; Sistem Pendukung Keputusan Penentuan CoffeeShop</p>
+        <p align="center" style="color: #999">&copy; Copyright <strong><span>AMA</span></strong>. SPK Coffe Shop</p>
       </div>
     </div>
     <!-- Footer End -->
