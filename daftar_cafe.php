@@ -55,7 +55,7 @@ include('koneksi.php');
 		}
 
 
-		if($harga = "sangat Murah"){
+		if($harga = "Sangat Murah"){
 			$harga_angka = 1;
 		} 
 		elseif($harga = "Murah"){
@@ -69,13 +69,13 @@ include('koneksi.php');
 		}
 
 		$sql = "INSERT INTO `cafe` (`id_cafe`, `nama_cafe`, `keramahan_dari_pelayan`, `kelengkapan_menu`, `tempat_parkir_kendaraan`, `ketersediaan_wifi`, `harga`, `keramahan_angka`, `menu_angka`, `parkir_angka`, `wifi_angka`, `harga_angka`) 
-				VALUES (NULL, :nama_cafe, :keramahan_dari_pelayan, :kelengkapan_menu, :tempat_parkir_kendaraan, :ketersediaan_wifi, :harga, :keramahan_angka, :menu_angka, :parkir_angka, :wifi_angka, :harga_angka)";
+				VALUES (NULL, :nama, :keramahan, :menu, :parkir, :wifi, :harga, :keramahan_angka, :menu_angka, :parkir_angka, :wifi_angka, :harga_angka)";
 		$stmt = $db->prepare($sql);
-		$stmt->bindValue(':nama_cafe', $nama);
-		$stmt->bindValue(':keramahan_dari_pelayan', $keramahan);
-		$stmt->bindValue(':kelengkapan_menu', $menu);
-		$stmt->bindValue(':tempat_parkir_kendaraan', $parkir);
-		$stmt->bindValue(':ketersediaan_wifi', $wifi);
+		$stmt->bindValue(':nama', $nama);
+		$stmt->bindValue(':keramahan', $keramahan);
+		$stmt->bindValue(':menu', $menu);
+		$stmt->bindValue(':parkir', $parkir);
+		$stmt->bindValue(':wifi', $wifi);
 		$stmt->bindValue(':harga', $harga);
 		$stmt->bindValue(':keramahan_angka', $keramahan_angka);
 		$stmt->bindValue(':menu_angka', $menu_angka);
@@ -262,7 +262,7 @@ include('koneksi.php');
 			<div class="col s6">
 					<div class="card-content">
 						<div class="row">
-							<center><h5 style="margin-top:-8px;">Masukan Cafe</h5></center>
+							<center><h5 style="margin-top:-8px;">Tambah Cafe</h5></center>
 							<form method="POST" action="">
 								<div class = "row">
 									<div class="col s12">
@@ -289,7 +289,7 @@ include('koneksi.php');
 										<b>Menu</b>
 										</div>
 										<div class="col s6">
-											<select style="display: block; margin-bottom: 4px;" required name="menu"> -->
+											<select style="display: block; margin-bottom: 4px;" required name="menu">
 												<option value = "1">Kurang Lengkap</option>
 												<option value = "2">Lengkap</option>
 												<option value = "3">Sangat Lengkap</option>
@@ -352,6 +352,7 @@ include('koneksi.php');
 	  	$(document).ready(function(){
 		$('.parallax').parallax();
 		$('.modal').modal();
+		$('select').material_select();
 		$('#table_id').DataTable({
     		"paging": false
 		});
