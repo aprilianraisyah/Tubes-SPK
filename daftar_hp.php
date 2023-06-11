@@ -4,110 +4,131 @@ include('koneksi.php');
 ?>
 
 <?php 
-	if(isset($_POST["tambah_hp"])){
-		$nama      = $_POST["nama"];
-		$harga     = $_POST["harga"];
-		$ram       = $_POST["ram"];
-		$memori    = $_POST["memori"];
-		$processor = $_POST["processor"];
-		$kamera    = $_POST["kamera"];
+	if(isset($_POST["tambah_cafe"])){
+		$nama		= $_POST["nama"];
+		$keramahan	= $_POST["keramahan"];
+		$menu       = $_POST["menu"];
+		$parkir		= $_POST["parkir"];
+		$wifi		= $_POST["wifi"];
+		$harga		= $_POST["harga"];
 		
-		$harga_angka = $ram_angka = $memori_angka = $processor_angka = $kamera_angka = 0;
+		$keramahan_angka = $menu_angka = $parkir_angka = $wifi_angka = $harga_angka = 0;
 
-		if($harga < 1000000){
-			$harga_angka = 5;
+		if($keramahan = 1){
+			$keramahan_angka = 1;
 		} 
-		elseif($harga >= 1000000 && $harga <= 3000000){
-			$harga_angka = 4;
+		elseif($keramahan = 2){
+			$keramahan_angka = 2;
 		}
-		elseif($harga > 3000000 && $harga <= 4000000){
-			$harga_angka = 3;
+		elseif($keramahan = 3){
+			$keramahan_angka = 3;
 		}
-		elseif($harga > 4000000 && $harga <= 5000000){
+		elseif($keramahan = 4){
+			$keramahan_angka = 4;
+		}
+		elseif($keramahan =5 ){
+			$keramahan_angka = 5;
+		}
+
+
+		if($menu = 1){
+			$menu_angka = 1;
+		} 
+		elseif($menu = 2){
+			$menu_angka = 2;
+		}
+		elseif($menu = 3){
+			$menu_angka = 3;
+		}
+		elseif($menu = 4){
+			$menu_angka = 4;
+		}
+		elseif($menu =5 ){
+			$menu_angka = 5;
+		}
+
+
+		if($parkir = 1){
+			$parkir_angka = 1;
+		} 
+		elseif($parkir = 2){
+			$parkir_angka = 2;
+		}
+		elseif($parkir = 3){
+			$parkir_angka = 3;
+		}
+		elseif($parkir = 4){
+			$parkir_angka = 4;
+		}
+		elseif($parkir =5 ){
+			$parkir_angka = 5;
+		}
+
+
+		if($wifi = 1){
+			$wifi_angka = 1;
+		} 
+		elseif($wifi = 2){
+			$wifi_angka = 2;
+		}
+		elseif($wifi = 3){
+			$wifi_angka = 3;
+		}
+		elseif($wifi = 4){
+			$wifi_angka = 4;
+		}
+		elseif($wifi =5 ){
+			$wifi_angka = 5;
+		}
+
+
+		if($harga = 1){
+			$harga_angka = 1;
+		} 
+		elseif($harga = 2){
 			$harga_angka = 2;
 		}
-		elseif($harga > 5000000){
-			$harga_angka = 1;
+		elseif($harga = 3){
+			$harga_angka = 3;
+		}
+		elseif($harga = 4){
+			$harga_angka = 4;
+		}
+		elseif($harga =5 ){
+			$harga_angka = 5;
 		}
 
-
-		if($ram < 6){
-			$ram_angka = $ram;
-		}
-		elseif($ram == 6){
-			$ram_angka = 5;
-		}
-
-
-		if($memori == 4){
-			$memori_angka = 1;
-		}
-		elseif($memori == 8){
-			$memori_angka = 2;
-		}
-		elseif($memori == 16){
-			$memori_angka = 3;
-		}
-		elseif($memori == 32){
-			$memori_angka = 4;
-		}
-		elseif($memori == 64){
-			$memori_angka = 5;
-		}
-
-
-		if($processor == "Dualcore"){
-			$processor_angka = 1;
-		}
-		elseif($processor == "Quadcore"){
-			$processor_angka = 3;
-		}
-		elseif($processor == "Octacore"){
-			$processor_angka = 5;
-		}
-
-
-		if($kamera == 8){
-			$kamera_angka = 1;
-		}
-		elseif($kamera == 13){
-			$kamera_angka = 3;
-		}
-		elseif($kamera == 16){
-			$kamera_angka = 5;
-		}
-
-		$sql = "INSERT INTO `data_hp` (`id_hp`, `nama_hp`, `harga_hp`, `ram_hp`, `memori_hp`, `processor_hp`, `kamera_hp`, `harga_angka`, `ram_angka`, `memori_angka`, `processor_angka`, `kamera_angka`) 
-				VALUES (NULL, :nama_hp, :harga_hp, :ram_hp, :memori_hp, :processor_hp, :kamera_hp, :harga_angka, :ram_angka, :memori_angka, :processor_angka, :kamera_angka)";
+		$sql = "INSERT INTO `cafe` (`id_cafe`, `nama_cafe`, `keramahan_dari_pelayan`, `kelengkapan_menu`, `tempat_parkir_kendaraan`, `ketersediaan_wifi`, `harga`, `keramahan_angka`, `menu_angka`, `parkir_angka`, `wifi_angka`, `harga_angka`) 
+				VALUES (NULL, :nama_cafe, :keramahan_dari_pelayan, :kelengkapan_menu, :tempat_parkir_kendaraan, :ketersediaan_wifi, :harga, :keramahan_angka, :menu_angka, :parkir_angka, :wifi_angka, :harga_angka)";
 		$stmt = $db->prepare($sql);
-		$stmt->bindValue(':nama_hp', $nama);
-		$stmt->bindValue(':harga_hp', $harga);
-		$stmt->bindValue(':ram_hp', $ram);
-		$stmt->bindValue(':memori_hp', $memori);
-		$stmt->bindValue(':processor_hp', $processor);
-		$stmt->bindValue(':kamera_hp', $kamera);
+		$stmt->bindValue(':nama_cafe', $nama);
+		$stmt->bindValue(':keramahan_dari_pelayan', $keramahan);
+		$stmt->bindValue(':kelengkapan_menu', $menu);
+		$stmt->bindValue(':tempat_parkir_kendaraan', $parkir);
+		$stmt->bindValue(':ketersediaan_wifi', $wifi);
+		$stmt->bindValue(':harga', $harga);
+		$stmt->bindValue(':keramahan_angka', $keramahan_angka);
+		$stmt->bindValue(':menu_angka', $menu_angka);
+		$stmt->bindValue(':parkir_angka', $parkir_angka);
+		$stmt->bindValue(':wifi_angka', $wifi_angka);
 		$stmt->bindValue(':harga_angka', $harga_angka);
-		$stmt->bindValue(':ram_angka', $ram_angka);
-		$stmt->bindValue(':memori_angka', $memori_angka);
-		$stmt->bindValue(':processor_angka', $processor_angka);
-		$stmt->bindValue(':kamera_angka', $kamera_angka);
 		$stmt->execute();
 	}
 
-	if(isset($_POST["hapus_hp"])){
-		$id_hapus_hp = $_POST['id_hapus_hp'];
-		$sql_delete = "DELETE FROM `data_hp` WHERE `id_hp` = :id_hapus_hp";
+	if(isset($_POST["hapus_cafe"])){
+		$id_hapus_cafe = $_POST['id_hapus_cafe'];
+		$sql_delete = "DELETE FROM `cafe` WHERE `id_cafe` = :id_hapus_cafe";
 		$stmt_delete = $db->prepare($sql_delete);
-		$stmt_delete->bindValue(':id_hapus_hp', $id_hapus_hp);
+		$stmt_delete->bindValue(':id_hapus_cafe', $id_hapus_cafe);
 		$stmt_delete->execute();
-		$query_reorder_id=mysqli_query($selectdb,"ALTER TABLE data_hp AUTO_INCREMENT = 1");
+		$query_reorder_id=mysqli_query($selectdb,"ALTER TABLE cafe AUTO_INCREMENT = 1");
 	}
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sistem Pendukung Keputusan Pemilihan Smartphone</title>
+	<title>Sistem Pendukung Keputusan Pemilihan Cafe</title>
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
@@ -139,7 +160,7 @@ include('koneksi.php');
 								<ul class="left" style="margin-left: -52px;">
 									<li><a href="index.php">HOME</a></li>
 									<li><a href="rekomendasi.php">REKOMENDASI</a></li>
-									<li><a class="active" href="daftar_hp.php">DAFTAR SMARTPHONE</a></li>
+									<li><a class="active" href="daftar_cafe.php">DAFTAR CAFE</a></li>
 									<li><a href="#about">TENTANG</a></li>
 								</ul>
 						</div>
@@ -158,39 +179,39 @@ include('koneksi.php');
 						<div class="row">
 						<div class="card">
 								<div class="card-content">
-									<center><h4 style="margin-bottom: 0px; margin-top: -8px;">Daftar Smartphone</h4></center>
+									<center><h4 style="margin-bottom: 0px; margin-top: -8px;">Daftar Cafe</h4></center>
 									<table id="table_id" class="hover dataTablesCustom" style="width:100%">
 											<thead style="border-top: 1px solid #d0d0d0;">
 												<tr>
 													<th><center>No </center></th>
-													<th><center>Nama HP</center></th>
-													<th><center>Harga HP</center></th>
-													<th><center>RAM HP</center></th>
-													<th><center>Memori HP</center></th>
-													<th><center>Processor HP</center></th>
-													<th><center>Kamera HP</center></th>
+													<th><center>Nama Cafe</center></th>
+													<th><center>Keramahan dari Pelayan</center></th>
+													<th><center>Kelengkapan Menu</center></th>
+													<th><center>Tempat Parkir Kendaraan</center></th>
+													<th><center>Ketersediaan Wifi</center></th>
+													<th><center>Harga</center></th>
 													<th><center>Hapus</center></th>
 												</tr>
 											</thead>
 											<tbody>
 												<?php
-												$query=mysqli_query($selectdb,"SELECT * FROM data_hp");
+												$query=mysqli_query($selectdb,"SELECT * FROM cafe");
 												$no=1;
 												while ($data=mysqli_fetch_array($query)) {
 												?>
 												<tr>
 													<td><center><?php echo $no; ?></center></td>
-													<td><center><?php echo $data['nama_hp'] ?></center></td>
-													<td><center><?php echo "Rp. ", $data['harga_hp'] ?></center></td>
-													<td><center><?php echo $data['ram_hp']," GB" ?></center></td>
-													<td><center><?php echo $data['memori_hp']," GB" ?></center></td>
-													<td><center><?php echo $data['processor_hp'] ?></center></td>
-													<td><center><?php echo $data['kamera_hp']," MP" ?></center></td>
+													<td><center><?php echo $data['nama_cafe'] ?></center></td>
+													<td><center><?php echo $data['keramahan_dari_pelayan'] ?></center></td>
+													<td><center><?php echo $data['kelengkapan_menu'] ?></center></td>
+													<td><center><?php echo $data['tempat_parkir_kendaraan'] ?></center></td>
+													<td><center><?php echo $data['ketersediaan_wifi'] ?></center></td>
+													<td><center><?php echo $data['harga'] ?></center></td>
 													<td>
 														<center>
 															<form method="POST">
-																<input type="hidden" name="id_hapus_hp" value="<?php echo $data['id_hp'] ?>">
-																<button type="submit" name="hapus_hp" style="height: 32px; width: 32px;" class="btn-floating btn-small waves-effect waves-light red"><i style="line-height: 32px;" class="material-icons">remove</i></button>
+																<input type="hidden" name="id_hapus_cafe" value="<?php echo $data['id_cafe'] ?>">
+																<button type="submit" name="hapus_cafe" style="height: 32px; width: 32px;" class="btn-floating btn-small waves-effect waves-light red"><i style="line-height: 32px;" class="material-icons">remove</i></button>
 															</form>
 														</center>
 													</td>
@@ -221,32 +242,32 @@ include('koneksi.php');
 						<div class="row">
 							<div class="card">
 								<div class="card-content" style="padding-top: 10px;">
-									<center><h5 style="margin-bottom: 10px;">Analisa Smartphone</h5></center>
+									<center><h5 style="margin-bottom: 10px;">Analisa Cafe</h5></center>
 									<table class="responsive-table">
 									
 											<thead style="border-top: 1px solid #d0d0d0;">
 												<tr>
 													<th><center>Alternatif</center></th>
-													<th><center>C1 (Cost)</center></th>
+													<th><center>C1 (Benefit)</center></th>
 													<th><center>C2 (Benefit)</center></th>
 													<th><center>C3 (Benefit)</center></th>
 													<th><center>C4 (Benefit)</center></th>
-													<th><center>C5 (Benefit)</center></th>
+													<th><center>C5 (Cost)</center></th>
 												</tr>
 											</thead>
 											<tbody>
 												<?php
-												$query=mysqli_query($selectdb,"SELECT * FROM data_hp");
+												$query=mysqli_query($selectdb,"SELECT * FROM cafe");
 												$no=1;
 												while ($data=mysqli_fetch_array($query)) {
 												?>
 												<tr>
 													<td><center><?php echo "A",$no ?></center></td>
+													<td><center><?php echo $data['keramahan_angka'] ?></center></td>
+													<td><center><?php echo $data['menu_angka'] ?></center></td>
+													<td><center><?php echo $data['parkir_angka'] ?></center></td>
+													<td><center><?php echo $data['wifi_angka'] ?></center></td>
 													<td><center><?php echo $data['harga_angka'] ?></center></td>
-													<td><center><?php echo $data['ram_angka'] ?></center></td>
-													<td><center><?php echo $data['memori_angka'] ?></center></td>
-													<td><center><?php echo $data['processor_angka'] ?></center></td>
-													<td><center><?php echo $data['kamera_angka'] ?></center></td>
 												</tr>
 												<?php
 														$no++;}
@@ -269,7 +290,7 @@ include('koneksi.php');
 			<div class="col s6">
 					<div class="card-content">
 						<div class="row">
-							<center><h5 style="margin-top:-8px;">Masukan Smartphone</h5></center>
+							<center><h5 style="margin-top:-8px;">Masukan Cafe</h5></center>
 							<form method="POST" action="">
 								<div class = "row">
 									<div class="col s12">
@@ -282,66 +303,78 @@ include('koneksi.php');
 										</div>
 
 										<div class="col s6" style="margin-top: 10px;">
-											<b>Harga</b>
+											<b>Keramahan</b>
 										</div>
-										<div class="col s6">
-											<input style="height: 2rem;" name="harga" type="number" required>
-										</div>
-										
-										<div class="col s6" style="margin-top: 10px;">
-										<b>RAM</b>
 										</div>
 										<div class="col s6">
 											<select style="display: block; margin-bottom: 4px;" required name="ram">
 												<!-- <option value = "" disabled selected>Kriteria RAM</option>  -->
-												<option value = "1">1 Gb</option>
-												<option value = "2">2 Gb</option>
-												<option value = "3">3 Gb</option>
-												<option value = "4">4 Gb</option>
-												<option value = "6">6 Gb</option>
+												<option value = "1">1 Nilai</option>
+												<option value = "2">2 Nilai</option>
+												<option value = "3">3 Nilai</option>
+												<option value = "4">4 Nilai</option>
+												<option value = "5">5 Nilai</option>
+											</select>
+										</div>
+										
+										<div class="col s6" style="margin-top: 10px;">
+										<b>Menu</b>
+										</div>
+										<div class="col s6">
+											<select style="display: block; margin-bottom: 4px;" required name="ram">
+												<!-- <option value = "" disabled selected>Kriteria RAM</option>  -->
+												<option value = "1">1 Nilai</option>
+												<option value = "2">2 Nilai</option>
+												<option value = "3">3 Nilai</option>
+												<option value = "4">4 Nilai</option>
+												<option value = "5">5 Nilai</option>
 											</select>
 										</div>
 
 										<div class="col s6" style="margin-top: 10px;">
-											<b>Memori</b>
+											<b>Parkir</b>
 										</div>
 										<div class="col s6">
 											<select style="display: block; margin-bottom: 4px;" required name="memori">
 												<!-- <option value = "" disabled selected>Kriteria Penyimpanan</option> -->
-												<option value = "4">4 Gb</option>
-												<option value = "8">8 Gb</option>
-												<option value = "16">16 Gb</option>
-												<option value = "32">32 Gb</option>
-												<option value = "64">64 Gb</option>
+												<option value = "1">1 Nilai</option>
+												<option value = "2">2 Nilai</option>
+												<option value = "3">3 Nilai</option>
+												<option value = "4">4 Nilai</option>
+												<option value = "5">5 Nilai</option>
 											</select>
 										</div>
 
 										<div class="col s6" style="margin-top: 10px;">
-											<b>Processor</b>
+											<b>Wifi</b>
 										</div>
 										<div class="col s6">
 											<select style="display: block; margin-bottom: 4px;" required name="processor">
-												<option value = "Dualcore">Dualcore</option>
-												<option value = "Quadcore">Quadcore</option>
-												<option value = "Octacore">Octacore</option>
+												<option value = "1">1 Nilai</option>
+												<option value = "2">2 Nilai</option>
+												<option value = "3">3 Nilai</option>
+												<option value = "4">4 Nilai</option>
+												<option value = "5">5 Nilai</option>
 											</select>
 										</div>
 
 										<div class="col s6" style="margin-top: 10px;">
-											<b>Kamera</b>
+											<b>Harga</b>
 										</div>
 										<div class="col s6">
 											<select style="display: block; margin-bottom: 4px;" required name="kamera">
 												<!-- <option value = "" disabled selected>Kriteria Kamera</option> -->
-												<option value = "8">8 Mp</option>
-												<option value = "13">13 Mp</option>
-												<option value = "16">16 Mp</option>
+												<option value = "1">1 Nilai</option>
+												<option value = "2">2 Nilai</option>
+												<option value = "3">3 Nilai</option>
+												<option value = "4">4 Nilai</option>
+												<option value = "5">5 Nilai</option>
 											</select>
 										</div>
 
 									</div>  
 								</div> 
-								<center><button name="tambah_hp" type="submit" class="waves-effect waves-light btn teal" style="margin-top: 0px;">Tambah</button></center>	
+								<center><button name="tambah_cafe" type="submit" class="waves-effect waves-light btn teal" style="margin-top: 0px;">Tambah</button></center>	
 							</form>
 						</div>
 					</div>

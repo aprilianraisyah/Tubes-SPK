@@ -3,11 +3,16 @@ session_start();
 include('koneksi.php');
 
 //Bobot
-$W1	= $_POST['harga'];
-$W2	= $_POST['ram'];
-$W3	= $_POST['memori'];
-$W4	= $_POST['processor'];
-$W5	= $_POST['kamera'];
+$W1	= 0.456;
+//$_POST['keramahan'];
+$W2	= 0.256;
+//$_POST['menu'];
+$W3	= 0.156;
+//$_POST['parkir'];
+$W4	= 0.090;
+//= $_POST['wifi'];
+$W5	= 0.040;
+//= $_POST['harga'];
 
 //Pembagi Normalisasi
 function pembagiNM($matrik){
@@ -87,7 +92,7 @@ function JarakIplus($aplus,$bob){
 					<ul class="left" style="margin-left: -52px;">
 						<li><a href="index.php">HOME</a></li>
 						<li><a href="rekomendasi.php">REKOMENDASI</a></li>
-						<li><a href="daftar_hp.php">DAFTAR SMARTPHONE</a></li>
+						<li><a href="daftar_hp.php">DAFTAR CAFE</a></li>
 						<li><a class="active" href="hasil.php">PERHITUNGAN</a></li>
 						<li><a href="#about">TENTANG</a></li>
 					</ul>
@@ -119,27 +124,27 @@ function JarakIplus($aplus,$bob){
 										<thead style="border-top: 1px solid #d0d0d0;">
 											<tr>
 												<th><center>Alternatif</center></th>
-												<th><center>C1 (Cost)</center></th>
+												<th><center>C1 (Benefit)</center></th>
 												<th><center>C2 (Benefit)</center></th>
 												<th><center>C3 (Benefit)</center></th>
 												<th><center>C4 (Benefit)</center></th>
-												<th><center>C5 (Benefit)</center></th>
+												<th><center>C5 (Cost)</center></th>
 											</tr>
 										</thead>
 										<tbody>
 											<?php
-											$query=mysqli_query($selectdb,"SELECT * FROM data_hp");
+											$query=mysqli_query($selectdb,"SELECT * FROM cafe");
 											$no=1;
-											while ($data_hp=mysqli_fetch_array($query)) {
-												$Matrik[$no-1]=array($data_hp['harga_angka'],$data_hp['ram_angka'],$data_hp['memori_angka'],$data_hp['processor_angka'],$data_hp['kamera_angka'] );
+											while ($cafe=mysqli_fetch_array($query)) {
+												$Matrik[$no-1]=array($cafe['keramahan_angka'],$cafe['menu_angka'],$cafe['parkir_angka'],$cafe['wifi_angka'],$cafe['harga_angka'] );
 												?>
 												<tr>
 													<td><center><?php echo "A",$no ?></center></td>
-													<td><center><?php echo $data_hp['harga_angka'] ?></center></td>
-													<td><center><?php echo $data_hp['ram_angka'] ?></center></td>
-													<td><center><?php echo $data_hp['memori_angka'] ?></center></td>
-													<td><center><?php echo $data_hp['processor_angka'] ?></center></td>
-													<td><center><?php echo $data_hp['kamera_angka'] ?></center></td>
+													<td><center><?php echo $cafe['keramahan_angka'] ?></center></td>
+													<td><center><?php echo $cafe['menu_angka'] ?></center></td>
+													<td><center><?php echo $cafe['parkir_angka'] ?></center></td>
+													<td><center><?php echo $cafe['wifi_angka'] ?></center></td>
+													<td><center><?php echo $cafe['harga_angka'] ?></center></td>
 												</tr>
 												<?php
 												$no++;
@@ -168,34 +173,34 @@ function JarakIplus($aplus,$bob){
 										<thead style="border-top: 1px solid #d0d0d0;">
 											<tr>
 												<th><center>Alternatif</center></th>
-												<th><center>C1 (Cost)</center></th>
+												<th><center>C1 (Benefit)</center></th>
 												<th><center>C2 (Benefit)</center></th>
 												<th><center>C3 (Benefit)</center></th>
 												<th><center>C4 (Benefit)</center></th>
-												<th><center>C5 (Benefit)</center></th>
+												<th><center>C5 (Cost)</center></th>
 											</tr>
 										</thead>
 										<tbody>
 											<?php
-											$query=mysqli_query($selectdb,"SELECT * FROM data_hp");
+											$query=mysqli_query($selectdb,"SELECT * FROM cafe");
 											$no=1;
 											$pembagiNM=pembagiNM($Matrik);
-											while ($data_hp=mysqli_fetch_array($query)) {
+											while ($cafe=mysqli_fetch_array($query)) {
 
-												$MatrikNormalisasi[$no-1]=array($data_hp['harga_angka']/$pembagiNM[0],
-													$data_hp['ram_angka']/$pembagiNM[1],
-													$data_hp['memori_angka']/$pembagiNM[2],
-													$data_hp['processor_angka']/$pembagiNM[3],
-													$data_hp['kamera_angka']/$pembagiNM[4]);
+												$MatrikNormalisasi[$no-1]=array($cafe['keramahan_angka']/$pembagiNM[0],
+													$cafe['menu_angka']/$pembagiNM[1],
+													$cafe['parkir_angka']/$pembagiNM[2],
+													$cafe['wifi_angka']/$pembagiNM[3],
+													$cafe['harga_angka']/$pembagiNM[4]);
 
 													?>
 													<tr>
 														<td><center><?php echo "A",$no ?></center></td>
-														<td><center><?php echo round($data_hp['harga_angka']/$pembagiNM[0],6)?></center></td>
-														<td><center><?php echo round($data_hp['ram_angka']/$pembagiNM[1],6) ?></center></td>
-														<td><center><?php echo round($data_hp['memori_angka']/$pembagiNM[2],6) ?></center></td>
-														<td><center><?php echo round($data_hp['processor_angka']/$pembagiNM[3],6) ?></center></td>
-														<td><center><?php echo round($data_hp['kamera_angka']/$pembagiNM[4],6) ?></center></td>
+														<td><center><?php echo round($cafe['keramahan_angka']/$pembagiNM[0],6)?></center></td>
+														<td><center><?php echo round($cafe['menu_angka']/$pembagiNM[1],6) ?></center></td>
+														<td><center><?php echo round($cafe['parkir_angka']/$pembagiNM[2],6) ?></center></td>
+														<td><center><?php echo round($cafe['wifi_angka']/$pembagiNM[3],6) ?></center></td>
+														<td><center><?php echo round($cafe['harga_angka']/$pembagiNM[4],6) ?></center></td>
 													</tr>
 													<?php
 													$no++;
@@ -222,11 +227,11 @@ function JarakIplus($aplus,$bob){
 										<table class="responsive-table">
 											<thead>
 												<tr>
+													<th><center>Value Kriteria Keramahan</center></th>
+													<th><center>Value Kriteria Menu</center></th>
+													<th><center>Value Kriteria Parkir</center></th>
+													<th><center>Value Kriteria Wifi</center></th>
 													<th><center>Value Kriteria Harga</center></th>
-													<th><center>Value Kriteria Ram</center></th>
-													<th><center>Value Kriteria Memori</center></th>
-													<th><center>Value Kriteria Processor</center></th>
-													<th><center>Value Kriteria Kamera</center></th>
 												</tr>
 											</thead>
 											<tbody>
@@ -261,19 +266,19 @@ function JarakIplus($aplus,$bob){
 											<thead style="border-top: 1px solid #d0d0d0;">
 												<tr>
 													<th><center>Alternatif</center></th>
-													<th><center>C1 (Cost)</center></th>
+													<th><center>C1 (Benefit)</center></th>
 													<th><center>C2 (Benefit)</center></th>
 													<th><center>C3 (Benefit)</center></th>
 													<th><center>C4 (Benefit)</center></th>
-													<th><center>C5 (Benefit)</center></th>
+													<th><center>C5 (Cost)</center></th>
 												</tr>
 											</thead>
 											<tbody>
 												<?php
-												$query=mysqli_query($selectdb,"SELECT * FROM data_hp");
+												$query=mysqli_query($selectdb,"SELECT * FROM cafe");
 												$no=1;
 												$pembagiNM=pembagiNM($Matrik);
-												while ($data_hp=mysqli_fetch_array($query)) {
+												while ($cafe=mysqli_fetch_array($query)) {
 													
 													$NormalisasiBobot[$no-1]=array(
 														$MatrikNormalisasi[$no-1][0]*$W1,
@@ -320,11 +325,11 @@ function JarakIplus($aplus,$bob){
 												<thead style="border-top: 1px solid #d0d0d0;">
 													<tr>
 														<th><center></center></th>
-														<th><center>Y1 (Cost)</center></th>
+														<th><center>Y1 (Benefit)</center></th>
 														<th><center>Y2 (Benefit)</center></th>
 														<th><center>Y3 (Benefit)</center></th>
 														<th><center>Y4 (Benefit)</center></th>
-														<th><center>Y5 (Benefit)</center></th>
+														<th><center>Y5 (Cost)</center></th>
 													</tr>
 												</thead>
 												<tbody>
@@ -336,22 +341,22 @@ function JarakIplus($aplus,$bob){
 														$idealpositif=array(min($NormalisasiBobotTrans[0]),max($NormalisasiBobotTrans[1]),max($NormalisasiBobotTrans[2]),max($NormalisasiBobotTrans[3]),max($NormalisasiBobotTrans[4]));
 														?>
 														<td><center><?php echo "Y+" ?> </center></td>
-														<td><center><?php echo(round(min($NormalisasiBobotTrans[0]),6));?>&nbsp(min)</center></td>
+														<td><center><?php echo(round(max($NormalisasiBobotTrans[0]),6));?>&nbsp(max)</center></td>
 														<td><center><?php echo(round(max($NormalisasiBobotTrans[1]),6));?>&nbsp(max)</center></td>
 														<td><center><?php echo(round(max($NormalisasiBobotTrans[2]),6));?>&nbsp(max)</center></td>
 														<td><center><?php echo(round(max($NormalisasiBobotTrans[3]),6));?>&nbsp(max)</center></td>
-														<td><center><?php echo(round(max($NormalisasiBobotTrans[4]),6));?>&nbsp(max)</center></td>
+														<td><center><?php echo(round(min($NormalisasiBobotTrans[4]),6));?>&nbsp(min)</center></td>
 													</tr>
 													<tr>
 														<?php  
 														$idealnegatif=array(max($NormalisasiBobotTrans[0]),min($NormalisasiBobotTrans[1]),min($NormalisasiBobotTrans[2]),min($NormalisasiBobotTrans[3]),min($NormalisasiBobotTrans[4]));
 														?>
 														<td><center><?php echo "Y-" ?> </center></td>
-														<td><center><?php echo(round(max($NormalisasiBobotTrans[0]),6));?>&nbsp(max)</center></td>
+														<td><center><?php echo(round(min($NormalisasiBobotTrans[0]),6));?>&nbsp(min)</center></td>
 														<td><center><?php echo(round(min($NormalisasiBobotTrans[1]),6));?>&nbsp(min)</center></td>
 														<td><center><?php echo(round(min($NormalisasiBobotTrans[2]),6));?>&nbsp(min)</center></td>
 														<td><center><?php echo(round(min($NormalisasiBobotTrans[3]),6));?>&nbsp(min)</center></td>
-														<td><center><?php echo(round(min($NormalisasiBobotTrans[4]),6));?>&nbsp(min)</center></td>
+														<td><center><?php echo(round(max($NormalisasiBobotTrans[4]),6));?>&nbsp(max)</center></td>
 													</tr>
 												</tbody>
 											</table>
@@ -383,11 +388,11 @@ function JarakIplus($aplus,$bob){
 												</thead>
 												<tbody>
 													<?php
-													$query=mysqli_query($selectdb,"SELECT * FROM data_hp");
+													$query=mysqli_query($selectdb,"SELECT * FROM cafe");
 													$no=1;
 													$Dplus=JarakIplus($idealpositif,$NormalisasiBobot);
 													$Dmin=JarakIplus($idealnegatif,$NormalisasiBobot);
-													while ($data_hp=mysqli_fetch_array($query)) {
+													while ($cafe=mysqli_fetch_array($query)) {
 
 														?>
 														<tr>
@@ -429,10 +434,10 @@ function JarakIplus($aplus,$bob){
 												</thead>
 												<tbody>
 													<?php
-													$query=mysqli_query($selectdb,"SELECT * FROM data_hp");
+													$query=mysqli_query($selectdb,"SELECT * FROM cafe");
 													$no=1;
 													$nilaiV = array();
-													while ($data_hp=mysqli_fetch_array($query)) {
+													while ($cafe=mysqli_fetch_array($query)) {
 														
 														array_push($nilaiV, $Dmin[$no-1]/($Dmin[$no-1]+$Dplus[$no-1]));
 														?>
@@ -469,7 +474,7 @@ function JarakIplus($aplus,$bob){
 													<tr>
 														<th><center>Nilai Preferensi tertinggi</center></th>
 														<th></th>
-														<th><center>Alternatif HP terpilih</center></th>
+														<th><center>Alternatif CAFE terpilih</center></th>
 													</tr>
 												</thead>
 												<tbody>
@@ -478,12 +483,12 @@ function JarakIplus($aplus,$bob){
 														$testmax = max($nilaiV);
 														for ($i=0; $i < count($nilaiV); $i++) { 
 															if ($nilaiV[$i] == $testmax) {
-																$query=mysqli_query($selectdb,"SELECT * FROM data_hp where id_hp = $i+1");
+																$query=mysqli_query($selectdb,"SELECT * FROM cafe where id_cafe = $i+1");
 																?>
 																<td><center><?php echo "V".($i+1); ?></center></td>
 																<td><center><?php echo $nilaiV[$i]; ?></center></td>
 																<?php while ($user=mysqli_fetch_array($query)) { ?>
-																<td><center><?php echo $user['nama_hp']; ?></center></td>
+																<td><center><?php echo $user['nama_cafe']; ?></center></td>
 																<?php
 															}
 														}
