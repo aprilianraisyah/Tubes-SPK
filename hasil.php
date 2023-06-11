@@ -102,7 +102,7 @@ function JarakImin($aplus,$bob){
 				<div class="nav-wrapper">
 					<ul class="left" style="margin-left: -52px;">
 						<li><a href="index.php">Home</a></li>
-						<li><a href="daftar_cafe.php">Daftar Coffe Shop</a></li>
+						<li><a href="daftar_cafe.php">Daftar Coffee Shop</a></li>
 						<li><a class="active" href="hasil.php">Perhitungan</a></li>
 						<li><a href="tentang.php">Tentang</a></li>						
 					</ul>
@@ -121,8 +121,8 @@ function JarakImin($aplus,$bob){
 
 
 				<center>
-					<h5 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">HASIL REKOMENDASI COFFE SHOP</h5>
-					<h6 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">Dengan Metode ROC dan Topsis</h6>
+					<h5 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">HASIL REKOMENDASI COFFEE SHOP</h5>
+					<h6 class="header" style="margin-left: 24px; margin-bottom: 0px; margin-top: 24px; color: #635c73;">Dengan Metode ROC dan TOPSIS</h6>
 				</center>
 				<ul>
 					<li>
@@ -226,7 +226,7 @@ function JarakImin($aplus,$bob){
 							<div class="row">
 								<div class="card">
 									<div class="card-content">
-									<h5 style="margin-bottom: 16px; margin-top: -6px;">BOBOT (W)</h5>
+									<h5 style="margin-bottom: 16px; margin-top: -6px;">Bobot "W"</h5>
 										<table class="responsive-table">
 											<thead>
 												<tr>
@@ -260,7 +260,7 @@ function JarakImin($aplus,$bob){
 							<div class="row">
 								<div class="card">
 									<div class="card-content">
-										<h5 style="margin-bottom: 16px; margin-top: -6px;">Matriks Normalisasi terBobot "Y"</h5>
+										<h5 style="margin-bottom: 16px; margin-top: -6px;">Matriks Normalisasi Terbobot "Y"</h5>
 										<table class="responsive-table">
 
 											<thead style="border-top: 1px solid #d0d0d0;">
@@ -313,7 +313,7 @@ function JarakImin($aplus,$bob){
 								<div class="row">
 									<div class="card">
 										<div class="card-content">
-											<h5 style="margin-bottom: 16px; margin-top: -6px;">Matrik Solusi ideal positif "A+" dan negatif "A-"
+											<h5 style="margin-bottom: 16px; margin-top: -6px;">Matriks Solusi Ideal Positif "A+" dan Negatif "A-"
 											</h5>
 											<table class="responsive-table">
 
@@ -364,9 +364,9 @@ function JarakImin($aplus,$bob){
 						<ul>
 							<li>
 								<div class="row">
-									<div class="card" style="margin-left: 320px;margin-right: 320px;">
+									<div class="card" style="margin-left: 250px;margin-right: 250px;">
 										<div class="card-content">
-										<h5 style="margin-bottom: 16px; margin-top: -6px;">Jarak antara nilai terbobot terhadap Solusi ideal positif "D+" dan negatif "D-" </h5>
+										<h5 style="margin-bottom: 16px; margin-top: -6px;">Jarak Antara Nilai Terbobot terhadap Solusi Ideal Positif "D+" dan Negatif "D-" </h5>
 											<table class="responsive-table" >
 
 												<thead style="border-top: 1px solid #d0d0d0;">
@@ -411,7 +411,7 @@ function JarakImin($aplus,$bob){
 								<div class="row">
 									<div class="card" style="margin-left: 320px;margin-right: 320px;">
 										<div class="card-content">
-										<h5 style="margin-bottom: 16px; margin-top: -6px;">Nilai Preferensi untuk Setiap alternatif (V) </h5>
+										<h5 style="margin-bottom: 16px; margin-top: -6px;">Nilai Preferensi untuk Setiap Alternatif (V) </h5>
 											<table class="responsive-table" >
 
 												<thead style="border-top: 1px solid #d0d0d0;">
@@ -457,9 +457,9 @@ function JarakImin($aplus,$bob){
 
 												<thead style="border-top: 1px solid #d0d0d0;">
 													<tr>
-														<th><center>Nilai Preferensi tertinggi</center></th>
+														<th><center>Nilai Preferensi Tertinggi</center></th>
 														<th></th>
-														<th><center>Alternatif CAFE terpilih</center></th>
+														<th><center>Alternatif Coffee Shop Terpilih</center></th>
 													</tr>
 												</thead>
 												<tbody>
@@ -501,7 +501,7 @@ function JarakImin($aplus,$bob){
 		<!-- Footer Start -->
 		<div class="footer-copyright" style="padding: 0px 0px; background-color: white">
 			<div class="container">
-				<p align="center" style="color: #999">&copy; Copyright <strong><span>AMA</span></strong>. SPK Coffe Shop</p>
+				<p align="center" style="color: #999">&copy; Copyright <strong><span>AMA</span></strong>. SPK Coffee Shop</p>
 			</div>
 		</div>
 		<!-- Footer End -->

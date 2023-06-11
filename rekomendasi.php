@@ -33,7 +33,7 @@
 
 								<ul class="left" style="margin-left: -52px;">
                                     <li><a href="index.php">Home</a></li>
-									<li><a href="daftar_cafe.php">Daftar Coffe Shop</a></li>
+									<li><a href="daftar_cafe.php">Daftar Coffee Shop</a></li>
 									<li><a class="active" href="rekomendasi.php">Rekomendasi</a></li>
 									<li><a href="tentang.php">Tentang</a></li>
 								</ul>
@@ -144,7 +144,7 @@
     <!-- Footer Start -->
 	<div class="footer-copyright" style="padding: 0px 0px; background-color: white">
       <div class="container">
-        <p align="center" style="color: #999">&copy; Copyright <strong><span>AMA</span></strong>. SPK Coffe Shop</p>
+        <p align="center" style="color: #999">&copy; Copyright <strong><span>AMA</span></strong>. SPK Coffee Shop</p>
       </div>
     </div>
     <!-- Footer End -->

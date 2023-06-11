@@ -130,7 +130,7 @@ include('koneksi.php');
 						<div class="nav-wrapper">
 								<ul class="left" style="margin-left: -52px;">
 									<li><a href="index.php">Home</a></li>
-									<li><a class="active" href="daftar_cafe.php">Daftar Coffe Shop</a></li>
+									<li><a class="active" href="daftar_cafe.php">Daftar Coffee Shop</a></li>
 									<li><a href="rekomendasi.php">Rekomendasi</a></li>
 									<li><a href="tentang.php">Tentang</a></li>
 								</ul>
@@ -151,7 +151,7 @@ include('koneksi.php');
 						<div class="row">
 						<div class="card">
 								<div class="card-content">
-									<center><h4 style="margin-bottom: 0px; margin-top: -8px;">Daftar Coffe Shop</h4></center>
+									<center><h4 style="margin-bottom: 0px; margin-top: -8px;">Daftar Coffee Shop</h4></center>
 									<table id="table_id" class="hover dataTablesCustom" style="width:100%">
 											<thead style="border-top: 1px solid #d0d0d0;">
 												<tr>
@@ -344,7 +344,7 @@ include('koneksi.php');
     <!-- Footer Start -->
 	<div class="footer-copyright" style="padding: 0px 0px; background-color: white">
       <div class="container">
-        <p align="center" style="color: #999">&copy; Copyright <strong><span>AMA</span></strong>. SPK Coffe Shop</p>
+        <p align="center" style="color: #999">&copy; Copyright <strong><span>AMA</span></strong>. SPK Coffee Shop</p>
       </div>
     </div>
     <!-- Footer End -->

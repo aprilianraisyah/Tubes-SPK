@@ -87,7 +87,7 @@
       </div>
     <div class="container footer-bottom clearfix">
       <div class="copyright">
-        &copy; Copyright <strong><span>AMA</span></strong>. SPK Coffe Shop
+        &copy; Copyright <strong><span>AMA</span></strong>. SPK Coffee Shop
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
